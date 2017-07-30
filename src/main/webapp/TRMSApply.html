@@ -60,7 +60,7 @@
 							</tr>
 							<tr>
 								<td>Phone Number: </td> <td><input type="text" id="phone"> </td>
-								<td>E-mail: </td> <td><input type="text" id="email"></td>
+								<td>E-mail: </td> <td><input type="email" id="email"></td>
 							</tr>			
 						</table>
 						
@@ -74,8 +74,18 @@
 								<td><textarea rows="1" cols="50">University Course, Certification, ect.</textarea></td>
 							</tr>
 							<tr>
-								<td></td>
-								<td></td>
+							
+							<!-- Enter a date before 1980-01-01:<br>
+								<input type="date" name="bday" max="1979-12-31"><br><br>
+								Enter a date after 2000-01-01:<br>
+								<input type="date" name="bday" min="2000-01-02"><br><br>
+								<input type="submit">  -->
+								<td>Enter Start Date: <br><br> Enter Finish Date:</td>
+								<td><input type="date" name="start" max="2017-07-30">
+								<br><br>
+								<input type="date" name="end" min="2018-07-30"></td>
+								<td>Reimbursement Cause:</td>
+								<td><textarea rows="10" cols="50">Explaination for Reimbursement...</textarea></td>
 							</tr>
 						</table>
 					</form>
