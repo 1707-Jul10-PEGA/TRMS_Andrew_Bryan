@@ -10,6 +10,13 @@
 <link href="resources/css/rForm.css" rel="stylesheet" type="text/css" />
 <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
 
+<style>
+	td {
+		padding: 5px 5px;
+	}
+
+</style>
+
 </head>
 
 
@@ -34,30 +41,44 @@
 			<div id="wide-content">
 				<div>
 				 <h1 style="text-align:center;font-family:'Bowlby One SC',cursive;font-size:28px;"> Apply for Reimbursements</h1>
-					<table id="c_re" style="margin:0 auto;border:2px solid black">
-						<tr>
-							<td style="padding:10px;font-size:16px;"> First Name:  </td>
-							<td> <input type="text"></td>
-							<td style="padding:10px;font-size:16px;"> Last Name: </td>
-							<td> <input type="text"></td>
-							<td style="padding:10px;font-size:16px;"> Middle Initial: </td>
-							<td> <input type="text" style="width:20px;"></td>					
-						</tr>
-					</table>
-					
-					<table id="c_re" style="margin:0 auto;border:2px solid black">
-						<tr>
-							<td style="padding:10px;font-size:16px;"> First Name:  </td>
-							<td> <input type="text"></td>
-							<td style="padding:10px;font-size:16px;"> Last Name: </td>
-							<td> <input type="text"></td>
-							<td style="padding:10px;font-size:16px;"> Middle Initial: </td>
-							<td> <input type="text" style="width:20px;"></td>					
-						</tr>
-					</table>
-					
-					
-					
+					<br>
+					<br>
+					<br>
+					<form>
+						<table style="margin:0 auto;">
+							<tr>
+								<td>First Name: </td> <td><input type="text" id="fname"> </td>
+								<td>Last Name: </td> <td><input type="text" id="lname">  </td>
+								<td>Middle Initial:</td> <td><input type="text" id="mname" style="width:50px;"> </td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Address: </td> <td><input type="text" id="address"></td>
+								<td>City: </td> <td><input type="text" id="city"></td>
+								<td>State: </td> <td><input type="text" id="state" style="width:50px;"></td>
+								<td>zip-code: </td> <td><input type="text" id="zip" style="width:50px;"></td>
+							</tr>
+							<tr>
+								<td>Phone Number: </td> <td><input type="text" id="phone"> </td>
+								<td>E-mail: </td> <td><input type="text" id="email"></td>
+							</tr>			
+						</table>
+						
+						<br><br>
+						
+						<table style="margin:0 auto;">
+							<tr>
+								<td>Reimbursement Amount: </td>
+								<td><input type="text" id="amount"></td>
+								<td>Reimbursement Title: </td>
+								<td><textarea rows="1" cols="50">University Course, Certification, ect.</textarea></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</form>
 				</div>
 			</div>
 		</div>
