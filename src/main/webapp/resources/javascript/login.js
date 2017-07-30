@@ -9,4 +9,8 @@ function printName(){
 	console.log("Password: " + password.value);
 }
 
-document.getElementById("login").addEventListener("click", printName, false);
+window.onload = function(){
+
+document.getElementById("login").addEventListener("click", printName, true);
+
+};
