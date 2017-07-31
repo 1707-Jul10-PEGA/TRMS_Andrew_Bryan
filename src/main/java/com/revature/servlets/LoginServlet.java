@@ -14,7 +14,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.beans.Employee;
 import com.revature.beans.LoginCred;
+import com.revature.daointerface.LoginDao;
 
 /**
  * Servlet implementation class LoginServlet
@@ -49,27 +51,12 @@ public class LoginServlet extends HttpServlet {
 		LoginCred logInfo = om.readValue(request.getParameter("login_cred"), LoginCred.class);
 		System.out.println(logInfo);
 		Connection conn;
-		try {
-			try {
-				Class.forName("oracle.jdbc.driver.OracleDriver");
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@trmsapp.ceupujns7wbp.us-east-1.rds.amazonaws.com:1521:ORCL", "TRMSApp",
-					"TRMSApp123");
-			String sqlStatement = "SELECT * FROM EMPLOYEE";
-			PreparedStatement pstmt = conn.prepareStatement(sqlStatement);
-			ResultSet rs = pstmt.executeQuery();
-			while(rs.next()){
-				if(logInfo.getUsername().equals(rs.getString(4)) && logInfo.getPassword().equals(rs.getString(5))){
-					System.out.println("ACCESS GRANTED");
-					break;
-				}
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		LoginDao ld = new LoginDaoImplement();
+		Employee emp = ld.login(logInfo.getUsername(), logInfo.getPassword());
+		if(emp != null){
+			
+		}else{
+			
 		}
 		
 		
