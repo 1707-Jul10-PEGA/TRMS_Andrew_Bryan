@@ -1,46 +1,89 @@
 
 function printInfo(){
 	
-	//NAME INFO
-	var fname = document.getElementById("fname");
-	var lname = document.getElementById("lname");
-	var mname = document.getElementById("mname");
+	//REIMBURSEMENT INFO
+	var r_amount = document.getElementById("amount");
+	var r_title = document.getElementById("type");
+	var grade = document.getElementById("grade");
+	var details = document.getElementById("details");
 	
-	//ADDRESS INFO
-	var address = document.getElementById("address");
-	var city = document.getElementById("city");
-	var state = document.getElementById("state");
-	var zip = document.getElementById("zip");
 	
-	//CONTACT INFO
-	var phone = document.getElementById("phone");
-	var email = document.getElementById("email");
+
+	console.log("Reimbusement Info");
+	console.log("Amount: " + r_amount.value);
+	console.log("Title: " + r_title.value);
+	console.log("Grade: " + grade.value);
+	console.log("Details:\n" + details.value);
+	
+}
+
+
+function postApplication(){
 	
 	//REIMBURSEMENT INFO
 	var r_amount = document.getElementById("amount");
 	var r_title = document.getElementById("title");
-	var r_start = document.getElementById("start");
-	var r_end = document.getElementById("end");
-	var explaination = document.getElementById("explaination");
+	var grade = document.getElementById("grade");
+	var details = document.getElementById("details");
 	
 	
-	console.log("Firstname: " + fname.value);
-	console.log("Lastname: " + lname.value);
-	console.log("Middlename: " + mname.value);
-	console.log("Address: " + address.value + " " + city.value + ", " + state.value + " " + zip.value);
-	console.log("Phone Number: " + phone.value);
-	console.log("Email: " + email.value);
+	//OPEN HTTP REQUEST
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function(){
+		
+		switch(xhr.readyState){
+		case 0:
+			console.log(0);
+			break;
+		case 1:
+			console.log(1);
+			break;
+		case 2:
+			console.log(2);
+			break;
+		case 3:
+			console.log(3);
+			break;
+		case 4:
+			if(xhr.status == 200){
+				console.log('success');
+			}else{
+				console.log('fail');
+				console.log(xhr.status);
+			}
+			break;
+		}
+	};
 	
-	console.log("Reimbusement Info");
-	console.log("Amount: " + r_amount.value);
-	console.log("Title: " + r_title.value);
-	console.log("Start Date: " + r_start.value + " / "  + "End Date: " + r_end.value);
-	console.log("Explaination:\n" + explaination.value);
+	xhr.open("POST","ApplyServlet",true);
 	
-}
+	// we are changing the header
+	//we are telling the java code what to expect
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	var data = "application_cred=" + JSON.stringify(makeApplicationCred(amount.value, title.value, grade.value, details.value));
+	
+	// grab the data within the servlet
+	xhr.send(data);
+}	
+	
+	
+	function makeApplicationCred(a,b){
+		obj = {};
+		obj.amount = a;
+		obj.title = b;
+		obj.grade = c;
+		obj.details = d;
+		//obj.password = y;	
+		return obj;
+	}
+
+
+
+
+
 
 window.onload = function(){
 
 	document.getElementById("apply").addEventListener("click", printInfo, true);
 
-	};
+};
