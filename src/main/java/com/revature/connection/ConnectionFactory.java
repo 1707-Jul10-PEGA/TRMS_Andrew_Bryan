@@ -29,15 +29,25 @@ public class ConnectionFactory {
 		Connection conn = null;
 		try {
 
-			Properties prop = new Properties();
+			Properties prop = new Properties();/*
+			
 			try {
 				prop.load(new FileReader("datasource.properties"));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 			conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
 					prop.getProperty("password"));
+			*/try {
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@trmsapp.ceupujns7wbp.us-east-1.rds.amazonaws.com:1521:ORCL", "TRMSApp",
+					"TRMSApp123");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
