@@ -1,0 +1,104 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>TRMS</title>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Abel|Satisfy' rel='stylesheet' type='text/css' />
+<link href="resources/css/rForm.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
+
+<style>
+	td {
+		padding: 5px 5px;
+	}
+
+</style>
+
+</head>
+
+
+<body>
+<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">TRMS</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="TRMSmenu.html" accesskey="1" title="">Homepage</a></li>
+				<li><a href="TRMSMyReimbursement.html" accesskey="2" title="">My Reimbursements</a></li>
+				<li class="current_page_item"><a href="TRMSApply.html" accesskey="3" title="">Apply for Reimbursement</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="wrapper">
+	<div id="page-wrapper">
+		<div id="page">
+			<div id="wide-content">
+				<div>
+				 <h1 style="text-align:center;font-family:'Bowlby One SC',cursive;font-size:28px;"> Apply for Reimbursements</h1>
+					<br>
+					<br>
+					<br>
+					<form>
+						<table style="margin:0 auto;">
+							<tr>
+								<td>First Name: </td> <td><input type="text" id="fname"> </td>
+								<td>Last Name: </td> <td><input type="text" id="lname">  </td>
+								<td>Middle Initial:</td> <td><input type="text" id="mname" style="width:50px;"> </td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Address: </td> <td><input type="text" id="address"></td>
+								<td>City: </td> <td><input type="text" id="city"></td>
+								<td>State: </td> <td><input type="text" id="state" style="width:50px;"></td>
+								<td>zip-code: </td> <td><input type="text" id="zip" style="width:50px;"></td>
+							</tr>
+							<tr>
+								<td>Phone Number: </td> <td><input type="text" id="phone"> </td>
+								<td>E-mail: </td> <td><input type="email" id="email"></td>
+							</tr>			
+						</table>
+						
+						<br><br>
+						
+						<table style="margin:0 auto;">
+							<tr>
+								<td>Reimbursement Amount: </td>
+								<td><input type="text" id="amount"></td>
+								<td>Reimbursement Title: </td>
+								<td><textarea rows="1" cols="50">University Course, Certification, ect.</textarea></td>
+							</tr>
+							<tr>
+							
+							<!-- Enter a date before 1980-01-01:<br>
+								<input type="date" name="bday" max="1979-12-31"><br><br>
+								Enter a date after 2000-01-01:<br>
+								<input type="date" name="bday" min="2000-01-02"><br><br>
+								<input type="submit">  -->
+								<td>Enter Start Date: <br><br> Enter Finish Date:</td>
+								<td><input type="date" name="start" max="2017-07-30">
+								<br><br>
+								<input type="date" name="end" min="2018-07-30"></td>
+								<td>Reimbursement Cause:</td>
+								<td><textarea rows="10" cols="50">Explaination for Reimbursement...</textarea></td>
+							</tr>
+						</table>
+						<br><br>
+						<button type="submit" style="margin:0 42%;padding:0 5%" > Submit </button>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer" class="container">
+	
+</div>
+</body>
+</html>
