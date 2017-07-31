@@ -45,24 +45,6 @@
 					<br>
 					<br>
 					<form>
-						<table style="margin:0 auto;">
-							<tr>
-								<td>First Name: </td> <td><input type="text" id="fname"> </td>
-								<td>Last Name: </td> <td><input type="text" id="lname">  </td>
-								<td>Middle Initial:</td> <td><input type="text" id="mname" style="width:50px;"> </td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>Address: </td> <td><input type="text" id="address"></td>
-								<td>City: </td> <td><input type="text" id="city"></td>
-								<td>State: </td> <td><input type="text" id="state" style="width:50px;"></td>
-								<td>zip-code: </td> <td><input type="text" id="zip" style="width:50px;"></td>
-							</tr>
-							<tr>
-								<td>Phone Number: </td> <td><input type="text" id="phone"> </td>
-								<td>E-mail: </td> <td><input type="email" id="email"></td>
-							</tr>			
-						</table>
 						
 						<br><br>
 						
@@ -71,16 +53,36 @@
 								<td>Reimbursement Amount: </td>
 								<td><input type="text" id="amount"></td>
 								<td>Reimbursement Title: </td>
-								<td><textarea rows="1" cols="50" id="title">University Course, Certification, ect.</textarea></td>
+								<td><Select id="type">
+									<option>University Course </option>
+									<option>Seminar </option>
+									<option>Certification Preparation Class </option>
+									<option>Certification </option>
+									<option>Technical Training</option>
+									<option>Other</option>
+								</Select></td>
 							</tr>
 							<tr>
-						
-								<td>Enter Start Date: <br><br> Enter Finish Date:</td>
-								<td><input type="date" id="start" max="2017-07-30">
-								<br><br>
-								<input type="date" id="end" min="2018-07-30"></td>
-								<td>Reimbursement Cause:</td>
-								<td><textarea rows="10" cols="50" id="explaination">Explaination for Reimbursement...</textarea></td>
+								<td></td>
+								<td>
+								 Grade: <select id="grade">
+								 			<option>A+</option>
+								 			<option>A</option>
+								 			<option>A-</option>
+								 			<option>B+</option>
+								 			<option>B</option>
+								 			<option>B-</option>
+								 			<option>C+</option>
+								 			<option>C</option>
+								 			<option>C-</option>
+								 			<option>D+</option>
+								 			<option>D</option>
+								 			<option>D-</option>
+								 			<option>F</option>
+								 		</select>
+								</td>
+								<td style="text-align:right;">Description:</td>
+								<td><textarea rows="10" cols="50" id="details">Reimbursement Details...</textarea></td>
 							</tr>
 						</table>
 						<br><br>
