@@ -1,12 +1,13 @@
 package com.revature.servlets;
 
 import java.io.IOException;
-import java.sql.Connection;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.beans.Employee;
@@ -48,10 +49,15 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(logInfo);
 		LoginDao ld = new LoginDaoImplement();
 		Employee emp = ld.login(logInfo.getUsername(), logInfo.getPassword());
+		HttpSession hs = null;
 		if(emp != null){
 			System.out.println("Access Granted");
+			hs = request.getSession();
+			hs.setAttribute("username", logInfo.getUsername());
+			System.out.println(hs.getAttribute("username"));
+			response.sendRedirect("TRMSmenu.html");
 		}else{
-			
+			response.setStatus(403);
 		}
 		
 		
