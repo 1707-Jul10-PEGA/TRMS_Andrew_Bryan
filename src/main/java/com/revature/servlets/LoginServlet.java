@@ -2,20 +2,17 @@ package com.revature.servlets;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.beans.Employee;
 import com.revature.beans.LoginCred;
+import com.revature.daoimplement.LoginDaoImplement;
 import com.revature.daointerface.LoginDao;
 
 /**
@@ -50,13 +47,17 @@ public class LoginServlet extends HttpServlet {
 		System.out.println(request.getParameter("login_cred"));
 		LoginCred logInfo = om.readValue(request.getParameter("login_cred"), LoginCred.class);
 		System.out.println(logInfo);
-		Connection conn;
 		LoginDao ld = new LoginDaoImplement();
 		Employee emp = ld.login(logInfo.getUsername(), logInfo.getPassword());
+		HttpSession hs = null;
 		if(emp != null){
-			
+			System.out.println("Access Granted");
+			hs = request.getSession();
+			hs.setAttribute("username", logInfo.getUsername());
+			System.out.println(hs.getAttribute("username"));
+			response.sendRedirect("TRMSmenu.html");
 		}else{
-			
+			response.setStatus(403);
 		}
 		
 		
