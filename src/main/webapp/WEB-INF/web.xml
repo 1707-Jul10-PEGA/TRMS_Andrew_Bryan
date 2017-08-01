@@ -9,7 +9,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
-    <url-pattern>/LoginServlet</url-pattern>
+    <url-pattern>/login</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -20,5 +20,15 @@
   <servlet-mapping>
     <servlet-name>ApplyServlet</servlet-name>
     <url-pattern>/ApplyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Menu</display-name>
+    <servlet-name>Menu</servlet-name>
+    <servlet-class>com.revature.servlets.Menu</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Menu</servlet-name>
+    <url-pattern>/menu</url-pattern>
   </servlet-mapping>
 </web-app>
