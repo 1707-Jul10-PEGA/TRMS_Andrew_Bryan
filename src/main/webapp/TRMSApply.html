@@ -1,0 +1,106 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>TRMS</title>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Abel|Satisfy' rel='stylesheet' type='text/css' />
+<link href="resources/css/rForm.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
+
+<style>
+	td {
+		padding: 5px 5px;
+	}
+
+</style>
+
+</head>
+
+
+<body>
+<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">TRMS</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="TRMSmenu.html" accesskey="1" title=""> Homepage </a></li>
+				<li><a href="TRMSMyReimbursement.html" accesskey="2" title="">My Reimbursements</a></li>
+				<li class="current_page_item"><a href="TRMSApply.html" accesskey="3" title="">Apply for Reimbursement</a></li>
+				<li><a href="TRMSnotifications.html" accesskey="2" title="TRMSnotifications">Notifications</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="wrapper">
+	<div id="page-wrapper">
+		<div id="page">
+			<div id="wide-content">
+				<div>
+				 <h1 style="text-align:center;font-family:'Bowlby One SC',cursive;font-size:28px;"> Apply for Reimbursements</h1>
+					<br>
+					<br>
+					<br>
+					<form>
+						
+						<br><br>
+						
+						<table style="margin:0 auto;">
+							<tr>
+								<td>Reimbursement Amount: </td>
+								<td><input type="text" id="amount"></td>
+								<td>Reimbursement Title: </td>
+								<td><Select id="type">
+									<option>University Course </option>
+									<option>Seminar </option>
+									<option>Certification Preparation Class </option>
+									<option>Certification </option>
+									<option>Technical Training</option>
+									<option>Other</option>
+								</Select></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+								 Grade: <select id="grade">
+								 			<option>A+</option>
+								 			<option>A</option>
+								 			<option>A-</option>
+								 			<option>B+</option>
+								 			<option>B</option>
+								 			<option>B-</option>
+								 			<option>C+</option>
+								 			<option>C</option>
+								 			<option>C-</option>
+								 			<option>D+</option>
+								 			<option>D</option>
+								 			<option>D-</option>
+								 			<option>F</option>
+								 		</select>
+								</td>
+								<td style="text-align:right;">Description:</td>
+								<td><textarea rows="10" cols="50" id="details">Reimbursement Details...</textarea></td>
+							</tr>
+						</table>
+						<br><br>
+						<table style="margin:0 auto;">
+							<tr>
+								<td> <p class="button-style" id="apply"><a href="#" method="POST" >Apply</p> </td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer" class="container">
+</div>
+
+<script type="text/javascript" src="resources/javascript/apply.js"> </script>
+</body>
+</html>
