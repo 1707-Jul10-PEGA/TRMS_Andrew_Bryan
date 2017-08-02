@@ -61,8 +61,8 @@ public class LoginServlet extends HttpServlet {
 			hs = request.getSession();
 			hs.setAttribute("username", logInfo.getUsername());
 			System.out.println(hs.getAttribute("username"));
-
-			response.sendRedirect("/menu");  
+			RequestDispatcher rd = request.getRequestDispatcher("menu");
+			rd.forward(request,response);
 		}else{
 			response.setStatus(403);
 		}
