@@ -1,8 +1,10 @@
 package com.revature.servlets;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,6 +37,10 @@ public class LoginServlet extends HttpServlet {
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+    	PrintWriter pw = response.getWriter();
+		String content = new Scanner(new File("project1/TRMSlogin.html")).useDelimiter("\\Z").next();
+		pw.write(content);
+    	response.setStatus(200);
 	}
 
 	/**
