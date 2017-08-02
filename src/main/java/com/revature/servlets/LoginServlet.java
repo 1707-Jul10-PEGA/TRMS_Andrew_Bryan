@@ -1,8 +1,8 @@
 package com.revature.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,46 +21,58 @@ import com.revature.daointerface.LoginDao;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * Default constructor. 
-     */
-    public LoginServlet() {
-        // TODO Auto-generated constructor stub
-    }
-
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * Default constructor.
 	 */
-    
-    @Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	public LoginServlet() {
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+
+	@Override
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		PrintWriter pw = response.getWriter();
+		pw.write("HI");
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		ObjectMapper om = new ObjectMapper();
 		System.out.println(request.getParameter("login_cred"));
-		LoginCred logInfo = om.readValue(request.getParameter("login_cred"), LoginCred.class);
+		LoginCred logInfo = om.readValue(request.getParameter("login_cred"),
+				LoginCred.class);
 		System.out.println(logInfo);
 		LoginDao ld = new LoginDaoImplement();
 		Employee emp = ld.login(logInfo.getUsername(), logInfo.getPassword());
 		HttpSession hs = null;
-		if(emp != null){
+		if (emp != null) {
 			System.out.println("Access Granted");
 			hs = request.getSession();
-			hs.setAttribute("username", logInfo.getUsername());
+			hs.setAttribute("username", logInfo.getUsername());	
 			System.out.println(hs.getAttribute("username"));
-			response.sendRedirect("TRMSmenu.html");
-		}else{
+			response.setContentType("text/html");
+
+			// New location to be redirected
+			String site = new String("TRMSmenu.html");
+
+			response.setStatus(response.SC_MOVED_TEMPORARILY);
+			response.setHeader("Location", site);
+		} else {
 			response.setStatus(403);
 		}
-		
-		
+
 	}
 
 }

@@ -31,6 +31,8 @@ function postEmployee(){
 		case 4:
 			if(xhr.status == 200){
 				console.log('success');
+				document.cookie = user.value;
+				window.location.href = "TRMSmenu.html";
 			}else{
 				console.log('fail');
 				console.log(xhr.status);
@@ -58,7 +60,7 @@ function makeLoginCred(x,y){
 }
 
 window.onload = function(){
-
+console.log("HELLO");
 document.getElementById("login").addEventListener("click", postEmployee, true);
 
 };
