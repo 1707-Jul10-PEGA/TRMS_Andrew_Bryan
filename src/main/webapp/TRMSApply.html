@@ -28,9 +28,10 @@
 		</div>
 		<div id="menu">
 			<ul>
-				<li><a href="TRMSmenu.html" accesskey="1" title="">Homepage</a></li>
+				<li><a href="TRMSmenu.html" accesskey="1" title=""> Homepage </a></li>
 				<li><a href="TRMSMyReimbursement.html" accesskey="2" title="">My Reimbursements</a></li>
 				<li class="current_page_item"><a href="TRMSApply.html" accesskey="3" title="">Apply for Reimbursement</a></li>
+				<li><a href="TRMSnotifications.html" accesskey="2" title="TRMSnotifications">Notifications</a></li>
 			</ul>
 		</div>
 	</div>
@@ -45,24 +46,6 @@
 					<br>
 					<br>
 					<form>
-						<table style="margin:0 auto;">
-							<tr>
-								<td>First Name: </td> <td><input type="text" id="fname"> </td>
-								<td>Last Name: </td> <td><input type="text" id="lname">  </td>
-								<td>Middle Initial:</td> <td><input type="text" id="mname" style="width:50px;"> </td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>Address: </td> <td><input type="text" id="address"></td>
-								<td>City: </td> <td><input type="text" id="city"></td>
-								<td>State: </td> <td><input type="text" id="state" style="width:50px;"></td>
-								<td>zip-code: </td> <td><input type="text" id="zip" style="width:50px;"></td>
-							</tr>
-							<tr>
-								<td>Phone Number: </td> <td><input type="text" id="phone"> </td>
-								<td>E-mail: </td> <td><input type="email" id="email"></td>
-							</tr>			
-						</table>
 						
 						<br><br>
 						
@@ -71,26 +54,44 @@
 								<td>Reimbursement Amount: </td>
 								<td><input type="text" id="amount"></td>
 								<td>Reimbursement Title: </td>
-								<td><textarea rows="1" cols="50">University Course, Certification, ect.</textarea></td>
+								<td><Select id="type">
+									<option>University Course </option>
+									<option>Seminar </option>
+									<option>Certification Preparation Class </option>
+									<option>Certification </option>
+									<option>Technical Training</option>
+									<option>Other</option>
+								</Select></td>
 							</tr>
 							<tr>
-							
-							<!-- Enter a date before 1980-01-01:<br>
-								<input type="date" name="bday" max="1979-12-31"><br><br>
-								Enter a date after 2000-01-01:<br>
-								<input type="date" name="bday" min="2000-01-02"><br><br>
-								<input type="submit">  -->
-								<td>Enter Start Date: <br><br> Enter Finish Date:</td>
-								<td><input type="date" name="start" max="2017-07-30">
-								<br><br>
-								<input type="date" name="end" min="2018-07-30"></td>
-								<td>Reimbursement Cause:</td>
-								<td><textarea rows="10" cols="50">Explaination for Reimbursement...</textarea></td>
+								<td></td>
+								<td>
+								 Grade: <select id="grade">
+								 			<option>A+</option>
+								 			<option>A</option>
+								 			<option>A-</option>
+								 			<option>B+</option>
+								 			<option>B</option>
+								 			<option>B-</option>
+								 			<option>C+</option>
+								 			<option>C</option>
+								 			<option>C-</option>
+								 			<option>D+</option>
+								 			<option>D</option>
+								 			<option>D-</option>
+								 			<option>F</option>
+								 		</select>
+								</td>
+								<td style="text-align:right;">Description:</td>
+								<td><textarea rows="10" cols="50" id="details">Reimbursement Details...</textarea></td>
 							</tr>
 						</table>
 						<br><br>
-						<button type="submit" style="margin:0 42%;padding:0 5%" > Submit </button>
-						
+						<table style="margin:0 auto;">
+							<tr>
+								<td> <p class="button-style" id="apply"><a href="#" method="POST" >Apply</p> </td>
+							</tr>
+						</table>
 					</form>
 				</div>
 			</div>
@@ -98,7 +99,8 @@
 	</div>
 </div>
 <div id="footer" class="container">
-	
 </div>
+
+<script type="text/javascript" src="resources/javascript/apply.js"> </script>
 </body>
 </html>

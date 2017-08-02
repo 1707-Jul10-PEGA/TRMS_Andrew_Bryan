@@ -11,4 +11,34 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ApplyServlet</display-name>
+    <servlet-name>ApplyServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ApplyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ApplyServlet</servlet-name>
+    <url-pattern>/ApplyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TestServlet</display-name>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>com.revature.servlets.TestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/TestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>NotificationServlet</display-name>
+    <servlet-name>NotificationServlet</servlet-name>
+    <servlet-class>com.revature.servlets.NotificationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NotificationServlet</servlet-name>
+    <url-pattern>/NotificationServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
